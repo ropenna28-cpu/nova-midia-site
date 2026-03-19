@@ -10,32 +10,13 @@ export default async function handler(req, res) {
         Authorization: `Bearer ${process.env.PAGBANK_TOKEN}`,
         "Content-Type": "application/json",
       },
-     body: JSON.stringify({
-  reference_id: `pedido_${Date.now()}`,
-
-  customer: {
-    name: "Cliente Teste",
-    email: "teste@email.com",
-    tax_id: "32984559894"
-  },
-
-  items: [
-    {
-      name: "Curso Marketing Digital",
-      quantity: 1,
-      unit_amount: 10000
-    }
-  ],
-
-  qr_codes: [
-    {
-      amount: {
-        value: 10000
-      }
-    }
-  ]
-})
+      body: JSON.stringify({
         reference_id: `pedido_${Date.now()}`,
+        customer: {
+          name: "Cliente Teste",
+          email: "teste@email.com",
+          tax_id: "12345678909"
+        },
         items: [
           {
             name: "Curso Marketing Digital",
